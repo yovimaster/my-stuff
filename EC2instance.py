@@ -1,7 +1,7 @@
 import boto.ec2
 
-access_key = 'AKIAJB46524P5FUPJ3JQ'
-secret_key = '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'
+access_key = '??????'
+secret_key = '?????'
 
 def get_ec2_instances(region):
     ec2_conn = boto.ec2.connect_to_region(region,
@@ -24,7 +24,7 @@ def ec2_treminate(instance_id):
 
 
 def main():
-    ec2_treminate('i-8cce2706')
+    ec2_treminate('?????')
 
 
 if  __name__ =='__main__':main()

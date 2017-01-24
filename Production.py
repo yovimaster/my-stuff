@@ -9,8 +9,8 @@ import sys
 logging.basicConfig(stream=sys.stdout,level=logging.INFO)
 
 # AWS info
-access_key = 'AKIAJB46524P5FUPJ3JQ'
-secret_key = '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'
+access_key = '???????'
+secret_key = '??????????????'
 region = 'eu-west-1'
 
 # Connections
@@ -25,13 +25,13 @@ elb_conn = boto.ec2.elb.connect_to_region(region,
                 aws_access_key_id=access_key,
                 aws_secret_access_key=secret_key)
 # IP and info 
-staging_ip = '54.229.79.209'
-staging_alloc = 'eipalloc-092ae062'
+staging_ip = '?????????/'
+staging_alloc = '?????/'
 
-cron_ip = '54.246.224.224'
-cron_alloc = 'eipalloc-4c6c0827'
+cron_ip = '????????/'
+cron_alloc = '??????//'
 
-production_elb_name = 'elb-ctconnect'
+production_elb_name = '????????'
 
 dissassoction_id = ''
 
