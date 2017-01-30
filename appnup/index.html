@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Graph</title>
+	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	  <script type="text/javascript" src="graph.js"></script>
+	  <script type='text/javascript' > 
+  			var graph_c_coor =[]; 
+	  </script>
+</head>
+<body>
+	<h1>
+  		Part A
+  	</h1>
+  	<div id="partA">  </div>
+  	<h1>
+  		Part B
+  	</h1>
+  	<div id="partB"></div>
+  	<h1>
+  		Part C
+	</h1>
+	<form>
+		<p> Enter here a coordinate </p>
+		<input id="xval">x</input>
+		<input id="yval">y</input>
+ 		<input type="button" onclick="add_point()" value="Submit">
+	</form>
+  	<iframe src="graphc.html" id="graphc" style="border: 0px; height:250px; width: 250px;"></iframe>
+</body>
+</html>
