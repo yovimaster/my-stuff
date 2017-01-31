@@ -1,0 +1,25 @@
+<html>
+
+<head>  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="fixgraph.js"></script>
+</head>
+<body>
+ <h1> Please enter Coordinates here </h1>
+  <form class="form-inline">
+    <label for="X" >X:</label>
+      <input class="form-control" id="xval" style="width:50px;">
+    <label for="Y" >Y:</label>
+      <input class="form-control" id="yval" style="width:50px;">
+    <label for="Z" >Z:</label>
+      <input class="form-control" id="zval" style="width:50px;">
+    <label for="label" >Label:</label>
+      <input class="form-control" id="label" style="width:100px;">
+    <button type="button" id="renderButton" class="btn btn-success">Add</button>
+  </form>
+  <div id="chartContainer" style="height: 300px; width: 100%;">
+  </div>
+</body>
+
+</html>
