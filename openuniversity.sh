@@ -1,7 +1,8 @@
 #!/bin/bash
 
-BASENAME='media_b1200000'
-VIDEOPATH='https://sslstream.bynetcdn.com/vod/mp4:vod/openu/PRV/ugBREejW2e/App/ugBREejW2e_2.mp4'
+BASENAME='media_b1800000'
+VAR='XnO8F9g91u'
+VIDEOPATH='https://sslstream.bynetcdn.com/vod/mp4:vod/openu/PRV1/'$VAR'/App/'$VAR'_6.mp4'
 
 
 for i in {1..1000}
