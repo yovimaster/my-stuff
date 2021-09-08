@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consumer
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: /metrics
+        prometheus.io/port: "9101"
+      labels:
+        app: consumer
+    spec:
+      containers:
+      - name: producer
+        image: simple_consumer:0.2
+        imagePullPolicy: Never
+        env:
+          - name: "PYTHONUNBUFFERED"
+            value: "1"

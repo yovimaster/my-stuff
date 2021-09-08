@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: producer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: producer
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: /metrics
+        prometheus.io/port: "9101"
+      labels:
+        app: producer
+    spec:
+      containers:
+      - name: producer
+        image: simple_producer:0.5
+        imagePullPolicy: Never
+        env:
+          - name: "PYTHONUNBUFFERED"
+            value: "1"
+        livenessProbe:
+          tcpSocket:
+            port: 9101
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        readinessProbe:
+          exec:
+            command:
+            - python
+            - /readiness.py
+          initialDelaySeconds: 5
+          periodSeconds: 5
