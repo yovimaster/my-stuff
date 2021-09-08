@@ -179,7 +179,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(messeges_in_total)",
+          "expr": "sum(messages_in_total)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
