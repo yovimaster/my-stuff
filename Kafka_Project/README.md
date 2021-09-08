@@ -1,54 +1,25 @@
-prerequisits
-`docker version !!!!`
+# Kafka Consumer and Producer on Kubernetes
 
+In This projesct im going to implement this basic Design
+```mermaid
+graph LR; Kafka-->Consumer; Producer-->Kafka;
+```
+And on top of that a Promethoues and grafna monitoring on this components
+```mermaid
+graph LR
+A[Prometheus] --> B(Producer)
+A --> C(Consumer)
+A --> E{Kafka}
+D[Grafana] --> A
+```
 
-install kind
+## Prerequisits
 
-`brew install kind`
+This project was created, ran and tested on MacOs Cataline (10.15)
+in order to run the deploy script you should install -
+Home brew -`bash curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh`
+Docker - `brew cask install docker`
+Kind - `brew install kind`
+Helm - `brew install helm`
 
-create cluster
-
-`kind create cluster`
-
-install helm
-
-`brew install helm`
-
-install kafka with helm chart
-
-`helm install kafka bitnami/kafka`
-
-create a topic on that kafka
-
-`./kafka-topics.sh --zookeeper  10.244.0.7:2181 --create --topic simple-one --partitions 1 --replication-factor 1`
-
-check that it runs - `./kafka-topics.sh --zookeeper  10.244.0.7:2181 --list
-
-build images of producer
-
-`cd producer && ./build.sh`
-
-upload the image to kind
-
-`kind load docker-image simple_prdoucer:0.1`
-
-deploy the chart
-
-kubectl apply -f producer.yaml
-
-same for consumer
-
-install prometheous
-
-`helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`
-`helm repo update`
-`helm install prom prometheus-community/prometheus`
-
-`helm repo add grafana https://grafana.github.io/helm-charts`
-`helm install grafana grafana/grafana`
-
-think about installing via helm intall or keep the chart localy for changes
-helm install -f values.yaml bitnami/wordpress --generate-name
-
-3 add a kafka exporter
-wrap all in helm chart and deploy scrip t
+## Deploying the stack
