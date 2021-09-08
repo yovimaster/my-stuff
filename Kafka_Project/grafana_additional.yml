@@ -4,7 +4,7 @@ datasources:
     datasources:
       - name: Prometheus
         type: prometheus
-        url: 10.244.0.21:9090
+        url: <placeholder>
         access: proxy
         isDefault: true
 sidecar:

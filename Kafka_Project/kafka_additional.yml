@@ -1,0 +1,3 @@
+metrics.kafka.enabled: true
+metrics.kafka.enabled: true
+metrics.serviceMonitor.enabled: true
