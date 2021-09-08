@@ -1,0 +1,18 @@
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        url: 10.244.0.21:9090
+        access: proxy
+        isDefault: true
+sidecar:
+  dashboards:
+    enabled: true
+    label: grafana_dashboard
+dashboards:
+  default:
+    prodcon:
+      file: dashboards/dashboard.json
+      datasource: Prometheus

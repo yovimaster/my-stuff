@@ -1,3 +1,4 @@
+import os
 import sys
 import random
 import time
@@ -15,7 +16,7 @@ def connect_to_kafka(bootstrap_servers):
         return False
 
 
-producer = KafkaProducer(bootstrap_servers='10.244.0.17:9092')
+producer = KafkaProducer(bootstrap_servers=os.environ['BOOTSTRAP_SERVERS'])
 
 messeges_out = Counter('messeges_out', 'number of messages sent to kafka')
 
@@ -30,8 +31,3 @@ def main():
 if __name__ == '__main__':
     start_http_server(9101)
     main()
-    for i in range(100):
-        sys.stdout.write('-------stdout-----')
-        print('----------------p--------------')
-        time.sleep(200)
-        connect_to_kafka("10.244.0.17:9092")

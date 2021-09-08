@@ -23,6 +23,8 @@ spec:
         env:
           - name: "PYTHONUNBUFFERED"
             value: "1"
+          - name: "BOOTSTRAP_SERVERS"
+            value: {{ required "Must have a running kafka!" .Values.bootstrap_servers }}
         livenessProbe:
           tcpSocket:
             port: 9101

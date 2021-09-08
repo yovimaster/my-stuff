@@ -1,0 +1,14 @@
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        url: <placeholder>
+        access: proxy
+        isDefault: true
+dashboards:
+  default:
+    prodcon:
+      file: dashboards/dashboard.json
+      datasource: Prometheus

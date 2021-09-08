@@ -16,7 +16,7 @@ install helm
 
 install kafka with helm chart
 
-`helm install my-release bitnami/kafka`
+`helm install kafka bitnami/kafka`
 
 create a topic on that kafka
 
@@ -42,10 +42,10 @@ install prometheous
 
 `helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`
 `helm repo update`
-`helm install  helm install prom prometheus-community/prometheus`
+`helm install prom prometheus-community/prometheus`
 
 `helm repo add grafana https://grafana.github.io/helm-charts`
-`helm install my-release grafana/grafana`
+`helm install grafana grafana/grafana`
 
 think about installing via helm intall or keep the chart localy for changes
 helm install -f values.yaml bitnami/wordpress --generate-name

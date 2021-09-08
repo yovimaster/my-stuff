@@ -1,0 +1,2 @@
+replicaCount: 1
+bootstrap_servers: {{ lookup "v1" "Endpoints" "kafka"}}
