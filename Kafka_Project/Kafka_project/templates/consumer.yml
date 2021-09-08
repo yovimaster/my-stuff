@@ -18,8 +18,24 @@ spec:
     spec:
       containers:
       - name: producer
-        image: simple_consumer:0.2
+        image: simple_consumer:0.1
         imagePullPolicy: Never
         env:
           - name: "PYTHONUNBUFFERED"
             value: "1"
+          - name: "BOOTSTRAP_SERVERS"
+            value: {{ required "Must have a running kafka!" .Values.bootstrap_servers }}
+          - name: TOPIC_NAME
+            value: {{ .Values.topic_name | default "default"}}
+        livenessProbe:
+          tcpSocket:
+            port: 9101
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        readinessProbe:
+          exec:
+            command:
+            - python
+            - /readiness.py
+          initialDelaySeconds: 5
+          periodSeconds: 5

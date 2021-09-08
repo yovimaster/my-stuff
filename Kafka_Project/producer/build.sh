@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export TAG="simple_producer:0.5"
+export TAG="simple_producer:0.1"
 
 docker build -t $TAG ./
 

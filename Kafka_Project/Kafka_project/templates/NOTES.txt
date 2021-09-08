@@ -1,1 +1,2 @@
 Installing Kafka producer and consumer
+remember to configure the topic name in the values.yaml

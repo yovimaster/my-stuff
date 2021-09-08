@@ -18,13 +18,15 @@ spec:
     spec:
       containers:
       - name: producer
-        image: simple_producer:0.5
+        image: simple_producer:0.1
         imagePullPolicy: Never
         env:
           - name: "PYTHONUNBUFFERED"
             value: "1"
           - name: "BOOTSTRAP_SERVERS"
             value: {{ required "Must have a running kafka!" .Values.bootstrap_servers }}
+          - name: TOPIC_NAME
+            value: {{ .Values.topic_name | default "default"}}
         livenessProbe:
           tcpSocket:
             port: 9101

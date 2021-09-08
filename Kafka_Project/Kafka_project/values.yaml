@@ -1,2 +1,3 @@
 replicaCount: 1
-bootstrap_servers: {{ lookup "v1" "Endpoints" "kafka"}}
+bootstrap_servers: <placeholder>
+topic_name: "Job"
