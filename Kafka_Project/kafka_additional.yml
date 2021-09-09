@@ -1,3 +1,5 @@
-metrics.kafka.enabled: true
-metrics.jmx.enabled: true
-metrics.serviceMonitor.enabled: true
+metrics:
+  kafka:
+    enabled: true
+  jmx:
+    enabled: true

@@ -1,17 +1,10 @@
 # Kafka Consumer and Producer on Kubernetes
 
 In This projesct im going to implement this basic Design
-```mermaid
-graph LR; Kafka-->Consumer; Producer-->Kafka;
-```
-And on top of that a Promethoues and grafna monitoring on this components
-```mermaid
-graph LR
-A[Prometheus] --> B(Producer)
-A --> C(Consumer)
-A --> E{Kafka}
-D[Grafana] --> A
-```
+
+Producer ==> Kafka ==> Consumer
+
+While also being monitored by prometheus
 
 ## Prerequisits
 
@@ -22,8 +15,10 @@ Docker - `brew cask install docker`
 Kind - `brew install kind`
 Helm - `brew install helm`
 
+After installing all of this, you need to create a kubernetes cluster on your loclahost (make sure you have at least 30GB availble)
+`kind create cluster`
+
+Once the cluster is up you are ready to continue to the next part
 ## Deploying the stack
 
-Finish writeing the md
-
-try and add the kafka dashbaord
+Once copied the relevant folder into you computer (you can git clone with sparse-checkout)

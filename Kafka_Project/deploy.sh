@@ -1,7 +1,7 @@
 # !/usr/bin/env bash
 
 echo "Deploying kafka"
-helm install -f kafka_additional.yml kafka bitnami/kafka
+helm install kafka -f kafka_additional.yml bitnami/kafka
 
 echo "Waiting for the service to recive it's endpoint"
 count=0
