@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+# !/usr/bin/env bash
 
 echo "Deploying kafka"
 helm install -f kafka_additional.yml kafka bitnami/kafka

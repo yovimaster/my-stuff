@@ -23,3 +23,7 @@ Kind - `brew install kind`
 Helm - `brew install helm`
 
 ## Deploying the stack
+
+Finish writeing the md
+
+try and add the kafka dashbaord
